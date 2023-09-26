@@ -1,0 +1,10 @@
+const mainFunction = function (callBack) {
+  console.log('normal');
+  callBack('Called by Mainfunction');
+};
+
+const callBackFunction = function (result) {
+  console.log('This functon is ', result);
+};
+
+mainFunction(callBackFunction);
