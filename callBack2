@@ -1,0 +1,8 @@
+const sum = function(a, b){
+console.log(a+b);  
+}
+
+const higherFun = function(x, y, cal){
+  cal(x, y);
+}
+higherFun(3, 7, sum);
