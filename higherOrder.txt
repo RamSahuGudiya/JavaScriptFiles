@@ -1,0 +1,22 @@
+
+const radius = [2,4,5];
+const output =[];
+
+
+const circleArea = function(radius){
+ return Math.PI*radius*radius;
+}
+
+const circleDiameter = function(radius){
+  return 2*radius;
+}
+
+const calc = function(radius, logic){
+  for(let i =0; i<radius.length; i++){
+    output.push(Math.trunc(logic(radius[i])));
+  }
+  return output;
+}
+
+console.log(calc(radius, circleArea))
+console.log(calc(radius, circleDiameter));
