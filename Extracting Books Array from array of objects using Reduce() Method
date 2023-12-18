@@ -1,0 +1,32 @@
+let friends = [
+  {
+    name: "anna",
+    books: ["bible", "Harry Poter"],
+    age: 21,
+  },
+  {
+    name: " Bob",
+    books: ["War and Peace", "Romeo and Juliet"],
+    age: 26,
+  },
+  {
+    name: "Alice",
+    books: ["The Lord of the Rings", "The Shining"],
+    age: 18,
+  },
+];
+
+const newArr = friends.reduce((acc, { books }) => {
+  return [...acc, ...books];
+}, []);
+console.log(newArr); 
+
+//output
+[
+  "bible",
+  "Harry Poter",
+  "War and Peace",
+  "Romeo and Juliet",
+  "The Lord of the Rings",
+  "The Shining",
+];
