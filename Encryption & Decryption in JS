@@ -1,0 +1,14 @@
+const str = "This message is encrypted";
+
+const base64 = btoa(str);       // converting binary string to base64
+
+console.log(base64);
+
+const decode = atob(base64);   //Decoding the base64
+
+console.log(decode);
+
+
+ O/P:
+ VGhpcyBtZXNzYWdlIGlzIGVuY3J5cHRlZA==
+ This message is encrypted
