@@ -1,0 +1,24 @@
+Code:
+
+function parent(a) {
+  return function (b) {
+    return a + b;
+  };
+}
+
+const child = parent(10);
+
+console.log(child(5));  //15  
+console.log(child(7));  //17  
+console.log(child(2));  //12  
+console.log(child(1));  //11  
+
+Explaination:
+//Remember that the parent  function is returning another function(ie. child function) 
+// ie. const child = parent(10);
+
+//which look like this:-
+
+//const child = function(b){
+//    return a+b;
+//} 
