@@ -1,0 +1,29 @@
+const person1 = {
+  firstName: "Ram sahu",
+  age: 23,
+  details: {
+    role: "developer",
+    skills: "front-End",
+  },
+  description: function () {
+    console.log(`${this.firstName} is a good ${this.details.role}`);
+  },
+};
+
+const person2 = JSON.parse(JSON.stringify(person1)); //Deep Copy
+// const person2 = Object.assign({}, person1); //Shallow Copy
+person2.firstName = "suresh";
+person2.details.role = "Tester";
+person2.details.skills = "sillenium";
+
+console.log(person1);
+console.log(person2);
+
+console.log(person1.firstName);
+console.log(person2.firstName);
+
+console.log(person1.details.role);
+console.log(person2.details.role);
+
+person1.description();
+person2.description();
