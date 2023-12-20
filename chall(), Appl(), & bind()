@@ -1,0 +1,77 @@
+//Defn: we could manually/explicitly set this keyword of any function that we want to call
+
+call():
+// The first argument is exactly what we want this keyword to point to(we pass some object like a person, then this keyword in the current function points to that person object)
+//__________________________________________________________________________________________________________________
+//CODE:
+//Example 1:- 
+
+const tata = {
+  airLines: "Tata Airlines",
+  code: "TH",
+  booking: [],
+  book: function (flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airLines} flight ${this.code} ${flightNum}`
+    );
+    this.booking.push({ flight: `${this.code} ${flightNum}, ${name}` });
+  },
+};
+//__________________________________________________________________________________________________________________
+//CODE:
+//EXAMPLE 2:-
+
+const airIndigo = {
+  airLines: "air Indigo",
+  code: "AI",
+  booking: [],
+};
+//___________________________________________________________________________________________________________________
+
+//we could take that method in object and store it in variable
+const book1 = tata.book;
+//so the new book1 variable is now a function that looks exactly like the method in tata object
+
+//Now call the call() mehtod on books1 function
+
+book1.call(airIndigo, 23, 'Ram Sahu');
+
+//O/P: Ram Sahu booked a seat on air Indigo flight AI 23
+______________________________________________________________________________________________________________________________________________________________________________
+apply():
+//It does basically the same thing, but the difference is apply() doesn't take a list of arguments after the this-keyword
+//But instead, it gonna take an array of arguments 
+
+
+//Ex:
+const flightData = [420, "Ramesh"];
+book1.apply(airIndigo, flightData);
+
+//O/P:Ramesh booked a seat on air Indigo flight AI 420
+
+______________________________________________________________________________________________________________________________________________________________________________
+bind():
+//Bind() method also allows us to manually set this keyword for any function call
+//The difference is that bind() doesn't immediately call the function, 
+// Instead it returns a new function where this keyword is bound(bounded to the object that we specified inside the bind() method)
+
+//Ex
+const bookEN = book1.bind(airIndigo);  //Return the new function(the function is bookEN bound with this keyword i.e airIndigo)
+//now let's use the function
+bookEN(123, 'Bind guy');
+
+//O/P: Bind guy booked a seat on air Indigo flight AI 123
+
+//Note: 
+//We can call the same function multiple times by just binding once
+// like:  bookEN(124, 'Bind guy1');
+//        bookEN(125, 'Bind guy2');
+
+//Note2: 
+//We can also pre-set the values 
+// basically specifying parts of the arguments beforehand
+// Ex:  bookEN = book1.bind(airIndigo, "12")  //Here we per set the value 12 before calling function ie at the time of bind()
+         // bookenEn("Demo Name1");
+         // bookenEn("Demo Name2");
+// O/P: Bind guy1 booked a seat on air Indigo flight AI 124
+//       Bind guy2 booked a seat on air Indigo flight AI 125
