@@ -1,0 +1,2 @@
+Data attributes are useful for storing information that may be needed by JavaScript but doesn't have a natural place in the standard HTML attributes.
+They provide a way to associate custom data with HTML elements for scripting purposes.
