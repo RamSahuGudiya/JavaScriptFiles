@@ -1,0 +1,29 @@
+What are Ajax and Ajax Calls?
+AJAX 
+Asynchronous JavaScript And XML: Allow us to communicate with remote web servers asynchronously, 
+In practice, we make AJAX Calls in our code to request some data from the web server dynamically
+(without reloading the page we can use that data in our application)
+
+How does Ajax work?
+let's say that our JS application running in the browser(client)
+and we want the application to get some data from a web server
+ex: Data about countries
+
+so with Ajax, we can do an HTTP request to the server which has that data
+The server with then set back a response containing the data(data about countries) that we requested
+This communication B/w Client & server all happens asynchronously in the background
+
+Different types of requests?
+GET request: To receive data
+POST request: TO send data to a server
+
+Note:
+When we ask a server to send us some data, That server usually contains an API 
+and that API is the one that has the data that we are requested for.
+
+What is API?
+Application Programming Interface : piece of software that can be used by another peace of software 
+in order to allow applications talk to each other and exchange information
+
+Important API:
+online API : Application running on a server, that receives requests for data, the retrieve that data from data baseand send data back as response
