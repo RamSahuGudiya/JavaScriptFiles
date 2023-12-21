@@ -1,2 +1,38 @@
-Data attributes are useful for storing information that may be needed by JavaScript but doesn't have a natural place in the standard HTML attributes.
-They provide a way to associate custom data with HTML elements for scripting purposes.
+
+what?
+• Data Attributes are a special kind of attribute the word prefix starts with "data". 
+• So these data attributes are always stored in the DataSet Object.
+Where?
+• we use data attributes quite a lot when we work with UI, especially when we need to store data in the user Interface,
+so basically in the HTML
+why?
+• Data attributes are useful for storing information that may be needed by JavaScript but don't have a natural place in HTML attributes.
+• They provide a way to associate custom data with HTML elements for scripting purposes.
+
+
+HTML:
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="juvva" data-custom-info="Edi costume attributr anta">
+      Hello, javascript
+    </h1>
+    <script src="script.js"></script>
+  </body>
+</html>
+_____________________________________________________________________________________________________________________
+JavaScript:
+
+const HeaderEle = document.querySelector(".juvva");
+
+const displayInfo = Info.dataset.customInfo;
+console.log(displayInfo);
+
+O/P:Edi costume attributr anta
+
