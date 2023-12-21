@@ -26,4 +26,5 @@ Application Programming Interface: a piece of software that can be used by anoth
 in order to allow applications to talk to each other and exchange information
 
 Important API:
-online API: Application running on a server, that receives requests for data, retrieves that data from the database sends data back as a response
+online API: Application running on a server, that receives requests for data, retrieves that data from the database, 
+and then sends data back to the client as a response
