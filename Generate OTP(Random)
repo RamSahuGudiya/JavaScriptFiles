@@ -1,0 +1,13 @@
+const generator = (length) => {
+  let OTP = "";
+  for (let i = 0; i < length; i++) {
+    //generate a random number
+    let randNumber = Math.trunc(Math.random() * 10);
+    //append the random number to the string(OTP)
+    OTP = OTP + randNumber;
+  }
+  return OTP;
+};
+
+console.log(generator(2));
+console.log(generator(5));
