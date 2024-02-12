@@ -1,0 +1,68 @@
+//HTML
+
+<form>
+      <!-- <label>First Name:</label> -->
+      <!-- <input class="first" type="text" /> <br /> -->
+      <!-- <label>Last Name:</label> -->
+      <!-- <input class="last" type="text" /> -->
+      <label>OTP:</label>
+      <input class="otp" type="text" />
+      <button class="sub">Submit</button>
+    </form>
+
+
+//JavaScript
+
+//Generating OTP
+const generator = (length) => {
+  let OTP = "";
+  for (let i = 0; i < length; i++) {
+    //generate a random number
+    let randNumber = Math.trunc(Math.random() * 10);
+    //append the random number to the string(OTP)
+    OTP = OTP + randNumber;
+  }
+  return +OTP;
+};
+let generatedOTP = generator(5);
+console.log(generatedOTP);
+
+//preserving OTP for 5 seconds
+let flag = true;
+function printNumbers(callBack) {
+  for (let i = 1; i <= 5; i++) {
+    setTimeout(() => {
+      console.log(i);
+      if (i === 5) {
+        flag = false;
+        console.log(flag);
+
+        callBack(flag);
+      }
+    }, i * 1000);
+  }
+}
+printNumbers((flag) => {
+  if (!flag) {
+    generatedOTP = 0;
+
+    console.log("Cirak");
+    console.log(flag);
+    console.log(generatedOTP);
+  } else {
+    generatedOTP;
+  }
+});
+
+const userEnteredOTP = document.querySelector(".otp");
+const otpSubmission = document.querySelector(".sub");
+
+//Check wheather the OTP is Right or Wrong within Time interval
+otpSubmission.addEventListener("click", function (e) {
+  e.preventDefault();
+  if (generatedOTP === +userEnteredOTP.value) {
+    alert("Successfully Verified");
+  } else {
+    alert("Your OTP is incorrect");
+  }
+});
