@@ -1,0 +1,10 @@
+let str =
+  "Hi this is ram sahu from india and had completed gradution in computer science engineering and currently im searching for a job.";
+const obj = {};
+
+str.split(" ").forEach((element) => {
+  console.log(
+    element[0].toUpperCase() +
+      element.toLowerCase().split("").splice(1).join("")
+  );
+});
